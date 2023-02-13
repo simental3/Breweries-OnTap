@@ -6,3 +6,10 @@ window.addEventListener('DOMContentLoaded', () => {
     getMovies();
 })
 
+
+
+// Fetchers
+function getMovies(){
+    const ul = document.querySelector('movie-list');
+
+}
