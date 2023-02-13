@@ -12,4 +12,9 @@ window.addEventListener('DOMContentLoaded', () => {
 function getMovies(){
     const ul = document.querySelector('movie-list');
 
+    fetch(baseURL + 'films/')
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+    })
 }
