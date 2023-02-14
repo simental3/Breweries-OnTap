@@ -45,7 +45,7 @@ const renderBrewery = (event) => {
     fetch(baseURL + `/breweries/${event.target.dataset.id}`)
     .then((response) => response.json())
     .then((data) => {
-        // console.log(data);
-        
+        console.log(data);
+        info.innerHTML = `<h1>${data.name}</h1></br>`
     })
 }
