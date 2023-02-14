@@ -38,11 +38,14 @@ const addClicksToLinks = () => {
 // Render Function
 const renderBrewery = (event) => {
     console.log(event.target.dataset.id);
-
+    const info = document.getElementById('info');
+    const ul = document.getElementById('brewery-list');
+    ul.innerHTML = "";
 
     fetch(baseURL + `/breweries/${event.target.dataset.id}`)
     .then((response) => response.json())
     .then((data) => {
-        console.log(data);
+        // console.log(data);
+        
     })
 }
