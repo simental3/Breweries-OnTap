@@ -21,5 +21,12 @@ function getBreweries(){
                 <li><a href="#">${brewery.name}</a></li>
             `
         })
+        addClicksToLinks();
     })    
+}
+
+
+// Event Listeners
+const addClicksToLinks = () => {
+    
 }
