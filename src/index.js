@@ -26,7 +26,7 @@ function getBreweries(){
 }
 
 
-// Event Listeners
+// Event Listener
 const addClicksToLinks = () => {
     const breweries = document.querySelectorAll('a');
     breweries.forEach((brewery) => {
@@ -34,3 +34,8 @@ const addClicksToLinks = () => {
     })
 }
 
+
+// Render Function
+const renderBrewery = () => {
+
+}
