@@ -46,6 +46,8 @@ const renderBrewery = (event) => {
     .then((response) => response.json())
     .then((data) => {
         console.log(data);
-        info.innerHTML = `<h1>${data.name}</h1></br>`
+        info.innerHTML = `<h1>${data.name}</h1></br>
+        <h3>City:</h3>
+        <p>${data.city}</p>`
     })
 }
