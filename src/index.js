@@ -49,10 +49,11 @@ const renderBrewery = (event) => {
         info.innerHTML = `<h1>${data.name}</h1></br>
         <h3>Brewery Type:</h3>
         <p>${data.brewery_type}</p>
+        <h3>Address:</h3>
+        <p>${data.street}</p>
         <h3>City:</h3>
         <p>${data.city}</p>
         <h3>State / Postal Code:</h3>
-        <p>${data.state}, ${data.postal_code}</p>
-
+        <p>${data.state}, ${data.postal_code}</p>`
     })
 }
