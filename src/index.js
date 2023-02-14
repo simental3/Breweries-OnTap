@@ -1,5 +1,5 @@
 // Global Variables
-const baseURL = 'https://api.openbrewerydb.org';
+const baseURL = "https://api.openbrewerydb.org";
 
 
 // Startup (Event Listener)
@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function getBreweries(){
     const ul = document.getElementById('brewery-list');
     
-    fetch(baseURL + '/breweries')
+    fetch(baseURL + "/breweries")
     .then((response) => response.json())
     .then((data) => {
         // console.log(data);
@@ -38,5 +38,11 @@ const addClicksToLinks = () => {
 // Render Function
 const renderBrewery = (event) => {
     console.log(event.target.dataset.id);
-    const info = document.getElementById('info')
+
+
+    fetch(baseURL + `/breweries/${event.target.dataset.id}`)
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+    })
 }
