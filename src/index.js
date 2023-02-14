@@ -54,6 +54,7 @@ const renderBrewery = (event) => {
         <h3>City:</h3>
         <p>${data.city}</p>
         <h3>State / Postal Code:</h3>
-        <p>${data.state}, ${data.postal_code}</p>`
+        <p>${data.state}, ${data.postal_code}</p>
+        `
     })
 }
