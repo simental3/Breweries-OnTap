@@ -1,5 +1,5 @@
 // Global Variables
-const baseURL = 'https://api.openbrewerydb.org/breweries';
+const baseURL = 'https://api.openbrewerydb.org';
 
 
 // Startup (Event Listener)
@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function getBreweries(){
     const ul = document.getElementById('brewery-list');
     
-    fetch(baseURL)
+    fetch(baseURL + '/breweries')
     .then((response) => response.json())
     .then((data) => {
         // console.log(data);
