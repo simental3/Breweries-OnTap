@@ -21,6 +21,7 @@ function getBreweries(){
                 <li><a href="#">${brewery.name}</a></li>
             `
         })
+        addClicksToLinks();
     })    
 }
 
