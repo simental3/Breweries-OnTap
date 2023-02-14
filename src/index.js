@@ -18,7 +18,7 @@ function getBreweries(){
         // console.log(data);
         data.forEach((brewery) => {
             ul.innerHTML += `
-                <li><a href="#">${brewery.name}</a></li>
+                <li><a href="#" data-id="${brewery.id}">${brewery.name}</a></li>
             `
         })
         addClicksToLinks();
@@ -36,6 +36,7 @@ const addClicksToLinks = () => {
 
 
 // Render Function
-const renderBrewery = () => {
-
+const renderBrewery = (event) => {
+    console.log(event.target);
+    // const 
 }
