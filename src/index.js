@@ -5,12 +5,16 @@ const baseURL = "https://api.openbrewerydb.org";
 // Startup (Event Listener)
 window.addEventListener('DOMContentLoaded', () => {
     getBreweries();
+    document.getElementById('brewery').addEventListener('click', getBreweries);
 })
 
 
 // Fetchers
 function getBreweries(){
     const ul = document.getElementById('brewery-list');
+    const info = document.getElementById('info');
+    info.innerHTML = "";
+    ul.innerHTML = "";
     
     fetch(baseURL + "/breweries")
     .then((response) => response.json())
@@ -55,6 +59,7 @@ const renderBrewery = (event) => {
         <p>${data.city}</p>
         <h3>State / Postal Code:</h3>
         <p>${data.state}, ${data.postal_code}</p>
-        `
+        <h3>Website:</h3>
+        <p>${data.website_url}</p>`
     })
 }
