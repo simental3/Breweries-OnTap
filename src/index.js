@@ -18,7 +18,7 @@ function getBreweries(){
         // console.log(data);
         data.forEach((brewery) => {
             ul.innerHTML += `
-                <li>${brewery.name}</li>
+                <li><a href="#">${brewery.name}</a></li>
             `
         })
     })    
