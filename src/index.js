@@ -15,6 +15,11 @@ function getBreweries(){
     fetch(baseURL)
     .then((response) => response.json())
     .then((data) => {
-        console.log(data);
+        // console.log(data);
+        data.forEach((brewery) => {
+            ul.innerHTML += `
+                <li>${brewery.name}</li>
+            `
+        })
     })    
 }
