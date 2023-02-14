@@ -37,6 +37,6 @@ const addClicksToLinks = () => {
 
 // Render Function
 const renderBrewery = (event) => {
-    console.log(event.target);
+    console.log(event.target.dataset.id);
     // const 
 }
