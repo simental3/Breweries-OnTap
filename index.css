@@ -7,10 +7,108 @@
     }
 
 body {
-    background-color: whitesmoke;
-    color: #333;
+    --accent-color: #FFBF00;
+    --background-color: white;
+    --text-color: black;
+    --button-text-color: var(--background-color);
+    --transition-delay: 1s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
     font-family: sans-serif;
     line-height: 18px;
+
+    transition: var(--transition-delay);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body.dark {
+    --accent-color: #pink;
+    --background-color: #333;
+    --text-color: white;
+    }
+
+    .title {
+        margin: 20;
+        margin-bottom: .5rem;
+
+    }
+
+    .theme-toggle-button {
+        background-color: var(--accent-color);
+        color: var(--button-text-color);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: .5em 1em;
+        border-radius: .3em;
+        border: none;
+        outline: none;
+        transition: var(--transition-delay);
+        transform: scale(1);
+    }
+
+    .theme-toggle-button .icon {
+        margin-right: .5em;
+    }
+
+    .theme-toggle-button:hover,
+    .theme-toggle-button:focus {
+        transform: scale(1.1);
+    }
+
+    .sun-moon-container {
+        --rotation: 0;
+
+        position: absolute;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        height: 200vmin;
+        transform: rotate(calc(var(--rotation) * 1deg));
+        transition: transform var(--transition-delay);
+    }
+
+    .sun,
+    .moon {
+        position: absolute;
+        transition: opacity, fill, var(--transition-delay);
+        width: 30px;
+        height: 30px;
+        fill: var(--accent-color);
+    }
+
+    .sun {
+        top: 5%;
+        opacity: 1;
+    }
+
+    .dark .sun {
+        opacity: 0;
+    }
+
+    .moon {
+        bottom: 5%;
+        opacity: 0;
+        transform: rotate(180deg);
+    }
+
+    .dark .moon {
+        opacity: 1;
+    }
+
+    .links {
+        --text-color: var(--background-color);
     }
 
     h1 {
@@ -47,4 +145,39 @@ body {
         margin-top: 20px;
         padding-top: 20px;
     }
+
 }
+
+
+
+    /* h1 {
+        font-size: 36px;
+        line-height: 54px;
+    }
+
+    h2 {
+        border-bottom: 2px solid #ccc;
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 16px;
+    }
+
+    h3 {
+        font-size: 18px;
+        line-height: 36px;
+    }
+
+    p {
+        margin-bottom: 18px;
+    }
+
+    .main {
+        overflow: hidden;
+    }
+
+    .branding {
+        clear: both;
+    }
+
+}
+ */

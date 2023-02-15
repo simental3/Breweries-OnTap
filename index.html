@@ -9,12 +9,31 @@
         <script defer src="src/index.js"></script>
     </head>
     <body>
-        <h1>Breweries "OnTap"</h1>
+        <header class="image">
+            <h1 class="title">Breweries "OnTap"</h1>
+        </header>
+        <button class="theme-toggle-button">
+            <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M7.5,2C5.71,3.15 4.5,5.18 4.5,7.5C4.5,9.82 5.71,11.85 7.53,13C4.46,13 2,10.54 2,7.5A5.5,5.5 0 0,1 7.5,2M19.07,3.5L20.5,4.93L4.93,20.5L3.5,19.07L19.07,3.5M12.89,5.93L11.41,5L9.97,6L10.39,4.3L9,3.24L10.75,3.12L11.33,1.47L12,3.1L13.73,3.13L12.38,4.26L12.89,5.93M9.59,9.54L8.43,8.81L7.31,9.59L7.65,8.27L6.56,7.44L7.92,7.35L8.37,6.06L8.88,7.33L10.24,7.36L9.19,8.23L9.59,9.54M19,13.5A5.5,5.5 0 0,1 13.5,19C12.28,19 11.15,18.6 10.24,17.93L17.93,10.24C18.6,11.15 19,12.28 19,13.5M14.6,20.08L17.37,18.93L17.13,22.28L14.6,20.08M18.93,17.38L20.08,14.61L22.28,17.15L18.93,17.38M20.08,12.42L18.94,9.64L22.28,9.88L20.08,12.42M9.63,18.93L12.4,20.08L9.87,22.27L9.63,18.93Z" />
+            </svg>
+            Dark/Light
+        </button>
+        <div class="sun-moon-container">
+            <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>beer</title>
+                <path d="M4,2H19L17,22H6L4,2M6.2,4L7.8,20H8.8L7.43,6.34C8.5,6 9.89,5.89 11,7C12.56,8.56 15.33,7.69 16.5,7.23L16.8,4H6.2Z" />
+            </svg>
+
+            <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>beer-outline</title>
+                <path d="M4 2L6 22H17L19 2H4M6.2 4H16.8L16.5 7.23C13.18 8.5 11.85 7.67 11.38 7.31C11.13 7.12 10.77 6.69 10.11 6.39C9.45 6.08 8.55 6 7.5 6.32C7.09 6.43 6.77 6.61 6.5 6.79L6.2 4M8.86 8.11C9.05 8.11 9.16 8.15 9.27 8.2C9.5 8.3 9.71 8.55 10.17 8.9C11.03 9.56 13.03 10.36 16.26 9.41L15.2 20H7.8L6.71 9.06C6.76 9 6.91 8.89 7.17 8.71C7.5 8.5 7.91 8.28 8 8.25L8 8.25H8.03C8.41 8.14 8.67 8.1 8.86 8.11Z" />
+            </svg>
+        </div>
         <button id="brewery">All Breweries</button>
-        <hr>
+        <!-- <hr> -->
         <br>
         <div id="main">
-            <ul id="brewery-list">
+            <ul class="links" id="brewery-list">
 
             </ul>
             <div id="info">
