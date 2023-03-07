@@ -65,3 +65,15 @@ const renderBrewery = (event) => {
 }
 
 // (Light/Dark Toggle) Event Listener
+const body = document.querySelector('body');
+const ball = document.querySelector('.ball');
+const checkbox = document.querySelector('.checkbox');
+const label = document.querySelector('.label');
+
+checkbox.addEventListener('change', () => {
+    // changes the theme of the website
+    checkbox.classList.toggle('dark');
+    ball.classList.toggle('dark');
+    body.classList.toggle('dark');
+    label.classList.toggle('dark');    
+})
