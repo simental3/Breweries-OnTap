@@ -3,7 +3,7 @@ const baseURL = "https://api.openbrewerydb.org";
 
 
 // Startup (Event Listener)
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     getBreweries();
     document.getElementById('brewery').addEventListener('click', getBreweries);
 })
@@ -64,11 +64,4 @@ const renderBrewery = (event) => {
     })
 }
 
-
-const sunMoonContainer = document.querySelector('.sun-moon-container');
-
-document.querySelector('.theme-toggle-button').addEventListener('click', () => {
-    document.body.classList.toggle('dark')
-    const currentRotation = parseInt(getComputedStyle(sunMoonContainer).getPropertyValue('--rotation'))
-    sunMoonContainer.style.setProperty('--rotation', currentRotation + 180)
-})
+// (Light/Dark Toggle) Event Listener

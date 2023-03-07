@@ -1,183 +1,131 @@
-@media screen {
-    /* --- Reset Styles ---*/
-    * {
-        list-style: none;
-        margin: 10px;
-        padding: 2px;
-    }
+/* '*' - selects all elements */
+* {
+	/* margin: 0; */
+	/* padding: 0; */
+	list-style: none;
+	margin: 10px;
+	padding: 2px;
+	box-sizing: border-box;
+}
 
+/* default light mode (body) */
 body {
-    --accent-color: #FFBF00;
-    --background-color: white;
-    --text-color: black;
-    --button-text-color: var(--background-color);
-    --transition-delay: 1s;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    font-family: sans-serif;
-    line-height: 18px;
-
-    transition: var(--transition-delay);
-    background-color: var(--background-color);
-    color: var(--text-color);
+	/* display: flex; */
+	/* color: black; */
+	color: #222;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #F8F8F8;
+	transition: 0.5s;
 }
 
+/* dark mode (body) */
 body.dark {
-    --accent-color: #pink;
-    --background-color: #333;
-    --text-color: white;
+	/* background: #2B2B2B; */
+	background: #121212;
+	color: #F8F8F8;
+}
+
+	/* Hide default HTML checkbox */
+	.checkbox {
+		opacity: 0;
+		position: absolute;
+	}
+
+	/* The rounded rectangle around the ball slider (default light mode) */
+	.label {
+		position: relative;
+		display: block;
+		border-radius: 50px;
+		padding: 5px;
+		height: 26px; 
+		width: 50px;
+		border-radius: 50px;
+		transition: 0.5s;
+		cursor: pointer; 
+		background: #FFF;
+		box-shadow: inset 0 0.2px 6px rgba(0,0,0,0.1),
+					inset 0 0.2px 1px rgba(0,0,0,0.1),
+					inset 0 -0.4px 1px rgba(0,0,0,0.05);
+	}
+
+	/* The rounded rectangle around the ball slider (dark mode) */
+	.label.dark {
+		background: #222;
+		box-shadow: inset 0 1px 6px rgba(0,0,0,0.1),
+					inset 0 1px 1px rgba(0,0,0,0.1),
+					inset 0 -0.4px 0.4px rgba(0,0,0,0.1);
+	}
+
+	/* The slider (default light mode) */
+	.ball {
+		position: absolute;
+		cursor: pointer;
+		top: 2px;
+		left: 2px;
+		height: 22px;
+		width: 22px;
+		margin: 0;
+		background: linear-gradient(to bottom, #EAEAEA, #F9F9F9);
+		border-radius: 50%;
+		/* box-shadow: 0 1px 6px rgba(0,0,0,0.1), */
+		box-shadow: 0 1px 8px rgba(0,0,0,0.1),
+                        inset 0 0.4px 0.4px rgba(255,255,255,1),
+                        inset 0 -0.4px 0.4px rgba(255,255,255,1);
+		transition: 0.5s;
+	}
+
+    /* The slider (dark mode) */
+    .ball.dark {
+		position: absolute;
+		cursor: pointer;
+		top: 2px;
+		left: 2px;
+		height: 22px;
+		width: 22px;
+        background: linear-gradient(to bottom, #444, #222);
+        /* box-shadow: 0 1px 6px rgba(0,0,0,0.5), */
+        box-shadow: 0 1px 8px rgba(0,0,0,0.5),
+					inset 0 0.4px 0.4px rgba(255,255,255,0.2),
+        			inset 0 -0.4px 0.4px rgba(255,255,255,0.2);
     }
 
-    .title {
-        margin: 20;
-        margin-bottom: .5rem;
-
+    /* when checkbox is checked */
+    .checkbox:checked + .label .ball {
+        transform: translateX(24px);
     }
 
-    .theme-toggle-button {
-        background-color: var(--accent-color);
-        color: var(--button-text-color);
+/* formatting */
+	a {
+		color: #444;
+	}
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        padding: .5em 1em;
-        border-radius: .3em;
-        border: none;
-        outline: none;
-        transition: var(--transition-delay);
-        transform: scale(1);
-    }
-
-    .theme-toggle-button .icon {
-        margin-right: .5em;
-    }
-
-    .theme-toggle-button:hover,
-    .theme-toggle-button:focus {
-        transform: scale(1.1);
-    }
-
-    .sun-moon-container {
-        --rotation: 0;
-
-        position: absolute;
-        pointer-events: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        top: 0;
-        height: 200vmin;
-        transform: rotate(calc(var(--rotation) * 1deg));
-        transition: transform var(--transition-delay);
-    }
-
-    .sun,
-    .moon {
-        position: absolute;
-        transition: opacity, fill, var(--transition-delay);
-        width: 30px;
-        height: 30px;
-        fill: var(--accent-color);
-    }
-
-    .sun {
-        top: 5%;
-        opacity: 1;
-    }
-
-    .dark .sun {
-        opacity: 0;
-    }
-
-    .moon {
-        bottom: 5%;
-        opacity: 0;
-        transform: rotate(180deg);
-    }
-
-    .dark .moon {
-        opacity: 1;
-    }
-
-    .links {
-        --text-color: var(--background-color);
-    }
-
-    h1 {
+	h1 {
         font-size: 36px;
         line-height: 54px;
     }
 
-    h2 {
+	h2 {
         border-bottom: 2px solid #ccc;
         font-size: 24px;
         line-height: 36px;
         margin-bottom: 16px;
     }
 
-    h3 {
+	h3 {
         font-size: 18px;
         line-height: 36px;
     }
 
-    p {
+	p {
         margin-bottom: 18px;
     }
 
-    .main {
+	.main {
         overflow: hidden;
     }
 
-    .branding {
+	.branding {
         clear: both;
     }
-
-    footer.branding {
-        border-top: 2px solid #ccc;
-        margin-top: 20px;
-        padding-top: 20px;
-    }
-
-}
-
-
-
-    /* h1 {
-        font-size: 36px;
-        line-height: 54px;
-    }
-
-    h2 {
-        border-bottom: 2px solid #ccc;
-        font-size: 24px;
-        line-height: 36px;
-        margin-bottom: 16px;
-    }
-
-    h3 {
-        font-size: 18px;
-        line-height: 36px;
-    }
-
-    p {
-        margin-bottom: 18px;
-    }
-
-    .main {
-        overflow: hidden;
-    }
-
-    .branding {
-        clear: both;
-    }
-
-}
- */
